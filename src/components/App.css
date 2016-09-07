@@ -1,0 +1,104 @@
+.App-header {
+  background-color: #5bc0de;
+  text-align: center;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background-color: #f7f7f7 !important;
+}
+
+
+.tweet-list {
+  padding: 0;
+  margin-top: 10px;
+  border: 1px solid #caf3ff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.tweet-container {
+  border-bottom: 1px solid #caf3ff;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-height: 200px;
+  background-color: #fff;
+}
+
+.tweet-image {
+  float: left;
+  width: 15%;
+}
+
+.tweet-image img {
+  margin: 15px auto;
+}
+
+.tweet-content {
+  float: left;
+  width: 85%;
+}
+
+.tweet-user {
+  margin-top: 10px;
+  font-size: 1.15em;
+}
+
+.tweet-user span:first-child {
+  float: left;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.tweet-user a {
+  float: left;
+}
+
+.tweet-info {
+  font-weight: normal;
+  float: right;
+  margin-right: 20px;
+}
+
+.tweet {
+  float: left;
+  padding-right: 20px;
+  font-size: 1em;
+  text-align: justify;
+}
+
+@media (max-width: 768px) { 
+  .tweet-container {
+    margin: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .tweet-image {
+    width: 20%;
+  }
+
+  .tweet-content {
+    float: left;
+    width: 80%;
+  }
+
+  .tweet-info {
+    float: left;
+    width: 100%;
+  }
+
+  .tweet-user {
+    font-size: 0.925em;
+  }
+
+  .tweet {
+    font-size: 0.875em;
+  }
+}

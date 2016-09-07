@@ -1,0 +1,30 @@
+{
+  "name": "tweet-feed",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:4000",
+  "devDependencies": {
+    "react-scripts": "0.4.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "immutable": "^3.8.1",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^15.3.1",
+    "react-bootstrap": "^0.30.3",
+    "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "react-thunk": "^1.0.0",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.6.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/react-scripts/config/eslint.js"
+  }
+}
