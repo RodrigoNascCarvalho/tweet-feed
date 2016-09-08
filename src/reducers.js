@@ -38,16 +38,11 @@ function tweetsByUser(state = {}, action) {
 	switch (action.type) {
 		case RECEIVE_TWEETS:
 		case REQUEST_TWEETS:
-			return Immutable
-					.fromJS(state)
-					.set('tweets', tweets(state[action.user], action))
-					.toJS();
+			return tweets(state[action.user], action);
 		default:
 			return state;
 	}
 }
-
-function 
 
 const rootReducer = combineReducers({
 	tweetsByUser,

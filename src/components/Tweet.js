@@ -1,26 +1,38 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Image } from 'react-bootstrap';
 import './Tweet.css';
 
-const Tweet = () => (
+const toDateString = date => {
+	return new Date(date).toDateString();
+};
+
+const Tweet = ({ text, user, favorite_count, created_at}) => (
 	<section className="Tweet-container">
 	    <div className="Tweet-image">
-	      <Image src="http://pbs.twimg.com/profile_images/719699602644058113/v1PZjNNr_normal.jpg" responsive/>
+	      <Image src={ user.profile_image_url } responsive/>
 	    </div>
 	    <div className="Tweet-content">
 	      <div className="Tweet-user">
-	        <span>Aberração Cromática</span>
-	        <a href="http://google.com" target="_blank">@Otherspacing</a>
+	        <span>{ user.name }</span>
+	        <a href={ `https://twitter.com/${ user.screen_name }` } target="_blank">@{ user.screen_name }</a>
 	        <div className="Tweet-info">
-	          <span><i className="glyphicon glyphicon-heart"></i> 1</span>
-	          <span>- May 1</span>
+	        	<span>{ toDateString(created_at) }</span>
+	          	<span><i className="glyphicon glyphicon-heart"></i> { favorite_count }</span>
+	          
 	        </div>
 	      </div>
 	      <p className="Tweet-text">
-	        Trocando de avatar depois de uns meses. É isso aí galera. É isso aí galera. É isso aí galera. É isso aí galera. É isso aí galera. Hahahahah.
+	      	{text}
 	      </p>
 	    </div>
   	</section>
 );
+
+Tweet.propTypes = {
+	text: PropTypes.string.isRequired,
+	user: PropTypes.object.isRequired,
+	favorite_count: PropTypes.number.isRequired,
+	created_at: PropTypes.string.isRequired
+};
 
 export default Tweet;

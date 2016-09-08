@@ -1,8 +1,39 @@
-.Tweet-list {
-  padding: 0;
-  margin-top: 10px;
-  border: 1px solid #caf3ff;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+.TweetList-tweets {
+	padding: 0;
+	margin-top: 10px;
+	border: 1px solid #caf3ff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
+
+.TweetList-container h2 {
+	text-align: center;
+	font-size: 1.25em;
+}
+
+.TweetList-container .loading {
+	margin: 10px auto;
+	border: 16px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 16px solid #5bc0de;
+	width: 75px;
+	height: 75px;
+	-webkit-animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
+}
+
+.TweetList-container .loading span {
+	visibility: hidden;
+}
+
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+

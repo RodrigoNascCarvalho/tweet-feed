@@ -23,8 +23,8 @@ export const RECEIVE_TWEETS = 'RECEIVE_TWEETS';
 export function receiveTweets(user, tweetArray) {
 	return {
 		type: RECEIVE_TWEETS,
-		user,
-		tweets: tweetArray
+		tweets: tweetArray,
+		user
 	}
 }
 
@@ -35,7 +35,7 @@ export function fetchTweets(user) {
 		return fetch(`http://localhost:4000/api/tweets/${user}`)
 			.then(res => res.json())
 			.then(json => {
-				dispatch(receiveTweets(user, tweetArray));
+				dispatch(receiveTweets(user, json));
 			});
 	}
 }

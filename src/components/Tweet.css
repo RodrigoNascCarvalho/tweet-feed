@@ -28,8 +28,11 @@
 
 .Tweet-user span:first-child {
   float: left;
-  font-weight: 600;
   margin-right: 10px;
+}
+
+.Tweet-user span:nth-child(2) {
+  font-weight: 600;
 }
 
 .Tweet-user a {
