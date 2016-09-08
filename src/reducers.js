@@ -7,7 +7,7 @@ import {
 import Immutable from 'immutable';
 
 
-function searchedUsername(state = 'Otherspacing', action) {
+function searchedUsername(state = {}, action) {
 	switch (action.type) {
 		case SEARCH_USER_TWEETS:
 			return action.user;

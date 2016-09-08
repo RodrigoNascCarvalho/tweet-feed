@@ -16,8 +16,8 @@ const TweetList = ({ isFetching, tweets }) => (
 	            <Row>
 	            	<Col xs={12} md={8} mdOffset={2}>
 	                	<div className="TweetList-tweets">
-	                		{tweets.map(tweet =>
-	                			<Tweet {...tweet}/>
+	                		{tweets.map((tweet, index) =>
+	                			<Tweet key={ index } {...tweet}/>
 	                		)}
 	            		</div>	
 	          		</Col>
