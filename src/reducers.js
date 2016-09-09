@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import {
 	SEARCH_USER_TWEETS,
+	SET_TWEET_ORDER,
 	REQUEST_TWEETS,
 	RECEIVE_TWEETS
 } from './actions';
@@ -11,6 +12,19 @@ function searchedUsername(state = {}, action) {
 	switch (action.type) {
 		case SEARCH_USER_TWEETS:
 			return action.user;
+		default:
+			return state;
+	}
+}
+
+function tweetOrder(state = { order: 'BY_DATE', isAscending: false }, action) {
+	switch (action.type) {
+		case SET_TWEET_ORDER:
+			return Immutable
+					.fromJS(state)
+					.set('order', action.order)
+					.set('isAscending', action.isAscending)
+					.toJS();
 		default:
 			return state;
 	}
@@ -38,7 +52,7 @@ function tweetsByUser(state = {}, action) {
 	switch (action.type) {
 		case RECEIVE_TWEETS:
 		case REQUEST_TWEETS:
-			return tweets(state[action.user], action);
+			return tweets(state, action);
 		default:
 			return state;
 	}
@@ -46,7 +60,8 @@ function tweetsByUser(state = {}, action) {
 
 const rootReducer = combineReducers({
 	tweetsByUser,
-	searchedUsername
+	searchedUsername,
+	tweetOrder
 });
 
 

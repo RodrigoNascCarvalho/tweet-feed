@@ -9,6 +9,16 @@ export function searchUserTweets(user) {
 	}
 }
 
+export const SET_TWEET_ORDER = 'SET_TWEET_ORDER';
+
+export function setTweetOrder (order, isAscending) {
+	return {
+		type: SET_TWEET_ORDER,
+		isAscending,
+		order
+	}
+}
+
 export const REQUEST_TWEETS = 'REQUEST_TWEETS';
 
 export function requestTweets(user) {

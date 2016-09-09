@@ -1,0 +1,16 @@
+.Menu-wrapper {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.Menu-wrapper .btn-toolbar {
+	margin: 0 auto; 
+    text-align: center;
+    width: inherit;
+    display: inline-block;
+}
+
+.Menu-disabled {
+	pointer-events: none;
+	opacity: 1;
+}
