@@ -30,7 +30,7 @@ let TweetSearch = ({dispatch}) => {
 		        <form onSubmit={ onSubmitHandler }>
 		          <FormGroup>
 		            <InputGroup>
-		              <FormControl  ref={  updateRef} 
+		              <FormControl  ref={ updateRef } 
 					        		type="text" 
 					        		placeholder="Enter Twitter username..." />
 		              <InputGroup.Button>

@@ -4,7 +4,7 @@ import {
 	SET_TWEET_ORDER,
 	REQUEST_TWEETS,
 	RECEIVE_TWEETS
-} from './actions';
+} from '../actions';
 import Immutable from 'immutable';
 
 
