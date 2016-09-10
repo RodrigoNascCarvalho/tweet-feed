@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonGroup, Button } from 'react-bootstrap';
-
+import './OrderGroup.css';
 
 const OrderGroup = ({name, onAscendingClick, onDescendingClick}) => {
 	const onAscendingClickHandler = e => {
@@ -20,7 +20,7 @@ const OrderGroup = ({name, onAscendingClick, onDescendingClick}) => {
 	  <Button onClick={ onDescendingClickHandler }>
 	  	<i className="glyphicon glyphicon-chevron-down"></i> {'DESC'}
 	  </Button>
-	  <Button className="Menu-disabled" disabled>{ name }</Button>
+	  <Button className="OrderGroup-disabled" disabled>{ name }</Button>
 	</ButtonGroup>);
 };
 

@@ -39,10 +39,12 @@ const getVisibleTweets = (tweets, tweetOrder) => {
 }
 
 const mapStateToProps = (state) => {
-	return {
+	let newState = {
 		...state, 
 		tweets: getVisibleTweets(state.tweetsByUser.tweets, state.tweetOrder)
 	};
+
+	return newState.tweetsByUser;
 }
 
 const VisibleTweetList = connect(mapStateToProps)(TweetList);

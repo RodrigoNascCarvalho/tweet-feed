@@ -8,7 +8,7 @@ import {
 import Immutable from 'immutable';
 
 
-function searchedUsername(state = {}, action) {
+function searchedUsername(state = '', action) {
 	switch (action.type) {
 		case SEARCH_USER_TWEETS:
 			return action.user;
@@ -36,6 +36,7 @@ function tweets(state = { isFetching: false, tweets: [] }, action) {
 			return Immutable
 					.fromJS(state)
 					.set('isFetching', true)
+					.set('tweets', [])
 					.toJS();
 		case RECEIVE_TWEETS:
 			return Immutable

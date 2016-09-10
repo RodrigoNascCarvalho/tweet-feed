@@ -6,7 +6,7 @@ import './OrderMenu.css';
 const OrderMenu = () => (
 	<Row>
 		<Col xs={12} md={6} mdOffset={3}>
-			<div className="Menu-wrapper">
+			<div className="OrderMenu-wrapper">
 				<ButtonToolbar>
 				    <OrderGroupMapper name="Date" order="BY_DATE" isAscending={false}/>
 				    <OrderGroupMapper name="Stars" order="BY_LIKES" isAscending={false}/>
