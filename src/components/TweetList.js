@@ -1,6 +1,7 @@
 import React from 'react';
 import Tweet from './Tweet';
 import OrderMenu from './OrderMenu';
+import FilterMenu from './FilterMenu';
 import { Row, Col } from 'react-bootstrap';
 import './TweetList.css';
 
@@ -15,13 +16,14 @@ const TweetList = ({ isFetching, tweets }) => (
     }
     {!isFetching && tweets && tweets.length > 0  &&
         <Row>
+        	<FilterMenu />
         	<OrderMenu />
         	<Col xs={12} md={8} mdOffset={2}>
             	<div className="TweetList-tweets">
             		{tweets.map((tweet, index) =>
             			<Tweet key={ index } {...tweet}/>
             		)}
-        		</div>	
+        		</div>
       		</Col>
     	</Row>
     }

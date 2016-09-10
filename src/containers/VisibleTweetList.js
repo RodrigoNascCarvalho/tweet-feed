@@ -39,12 +39,14 @@ const getVisibleTweets = (tweets, tweetOrder) => {
 }
 
 const mapStateToProps = (state) => {
+	let newTweetState = getVisibleTweets(state.tweetsByUser.tweets, state.tweetOrder);
+
 	let newState = {
-		...state, 
-		tweets: getVisibleTweets(state.tweetsByUser.tweets, state.tweetOrder)
+		isFetching: state.tweetsByUser.isFetching,
+		tweets: newTweetState ? newTweetState.slice() : newTweetState
 	};
 
-	return newState.tweetsByUser;
+	return newState;
 }
 
 const VisibleTweetList = connect(mapStateToProps)(TweetList);
