@@ -1,14 +1,5 @@
 import fetch from 'isomorphic-fetch';
 
-export const SEARCH_USER_TWEETS = 'SEARCH_USER_TWEETS';
-
-export function searchUserTweets(user) {
-	return {
-		type: SEARCH_USER_TWEETS,
-		user
-	}
-}
-
 export const SET_TWEET_ORDER = 'SET_TWEET_ORDER';
 
 export function setTweetOrder (order, isAscending) {
@@ -16,6 +7,34 @@ export function setTweetOrder (order, isAscending) {
 		type: SET_TWEET_ORDER,
 		isAscending,
 		order
+	}
+}
+
+export const SET_FILTER = 'SET_FILTER';
+
+export function setTweetFilter (filter, filterType) {
+	return {
+		type: SET_FILTER,
+		filter,
+		filterType
+	}
+}
+
+export const SET_OPERATOR = 'SET_OPERATOR';
+
+export function setTweetOperator (operator) {
+	return {
+		type: SET_OPERATOR,
+		operator
+	}
+}
+
+export const SET_FILTER_QUERY = 'SET_FILTER_QUERY';
+
+export function triggerFilter (query) {
+	return {
+		type: SET_FILTER_QUERY,
+		query
 	}
 }
 

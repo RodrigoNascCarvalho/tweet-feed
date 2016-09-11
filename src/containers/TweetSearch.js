@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { searchUserTweets, fetchTweets } from '../actions';
+import { fetchTweets } from '../actions';
 import { FormGroup, FormControl, InputGroup, Button, Row, Col } from 'react-bootstrap';
 
 let TweetSearch = ({dispatch}) => {
@@ -13,7 +13,7 @@ let TweetSearch = ({dispatch}) => {
 		if(!input.value.trim()) {
 			return;
 		}
-		dispatch(searchUserTweets(input.value));
+
 		dispatch(fetchTweets(input.value));
 		input.value = '';
 	};

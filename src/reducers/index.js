@@ -1,21 +1,13 @@
 import { combineReducers } from 'redux';
 import {
-	SEARCH_USER_TWEETS,
 	SET_TWEET_ORDER,
 	REQUEST_TWEETS,
-	RECEIVE_TWEETS
+	RECEIVE_TWEETS,
+	SET_FILTER,
+	SET_OPERATOR,
+	SET_FILTER_QUERY
 } from '../actions';
 import Immutable from 'immutable';
-
-
-function searchedUsername(state = '', action) {
-	switch (action.type) {
-		case SEARCH_USER_TWEETS:
-			return action.user;
-		default:
-			return state;
-	}
-}
 
 function tweetOrder(state = { order: 'BY_DATE', isAscending: false }, action) {
 	switch (action.type) {
@@ -29,6 +21,57 @@ function tweetOrder(state = { order: 'BY_DATE', isAscending: false }, action) {
 			return state;
 	}
 }
+
+function setFilter (state = {filter: '', filterType: ''}, action) {
+	switch (action.type) {
+		case SET_FILTER:
+			return Immutable
+					.fromJS(state)
+					.set('filter', action.filter)
+					.set('filterType', action.filterType)
+					.toJS();
+		default:
+			return state;
+	}
+}
+
+function setOperator (state = {operator: ''}, action) {
+	switch (action.type) {
+		case SET_OPERATOR:
+			return Immutable
+					.fromJS(state)
+					.set('operator', action.operator)
+					.toJS();
+		default:
+			return state;
+	}
+}
+
+function setFilterQuery (state = {query: ''}, action) {
+	switch (action.type) {
+		case SET_FILTER_QUERY:
+			return Immutable
+					.fromJS(state)
+					.set('query', action.query)
+					.toJS();
+		default:
+			return state;
+	}
+}
+
+function filterQuery (state = {}, action) {
+	switch(action.type) {
+		case SET_FILTER:
+			return setFilter(state, action);
+		case SET_OPERATOR:
+			return setOperator(state, action);
+		case SET_FILTER_QUERY:
+			return setFilterQuery(state, action);
+		default:
+			return state;
+	}
+}
+
 
 function tweets(state = { isFetching: false, tweets: [] }, action) {
 	switch (action.type) {
@@ -61,8 +104,8 @@ function tweetsByUser(state = {}, action) {
 
 const rootReducer = combineReducers({
 	tweetsByUser,
-	searchedUsername,
-	tweetOrder
+	tweetOrder,
+	filterQuery
 });
 
 
