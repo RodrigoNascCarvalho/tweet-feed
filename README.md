@@ -11,6 +11,10 @@ This is how the application looks like:
 
 To run it, just type:
 
-### `npm start`
+```
+npm install
+npm start
+```
+
 
 This project runs on port 3000. It's also absolutely necessary to have the [tweet-api](https://github.com/RodrigoNascCarvalho/tweet-api) project running together with this project on port 4000.
