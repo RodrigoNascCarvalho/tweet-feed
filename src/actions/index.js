@@ -75,7 +75,7 @@ export function fetchTweets(user) {
 				dispatch(receiveTweets(user, json));
 			})
 			.catch(err => {
-				dispatch(catchError())
+				dispatch(catchError());
 			});
 	};
 }

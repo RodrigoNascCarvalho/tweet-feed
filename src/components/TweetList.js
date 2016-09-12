@@ -8,8 +8,8 @@ import './TweetList.css';
 
 const TweetList = ({ isFetching, tweets, error }) => (
 	<div className="TweetList-container"> 
-	{!tweets &&
-        <h2>No tweets available. Please type a new username to see tweets here.</h2>
+	{!tweets && !error  &&
+        <h2>Please type a new username to see tweets here.</h2>
     }
 	{isFetching && tweets && tweets.length === 0 &&
 		<div className="loading"><span>Loading...</span></div>
@@ -36,7 +36,7 @@ const TweetList = ({ isFetching, tweets, error }) => (
         </Grid>
     }
     {!isFetching && error  &&
-        <h2>Error getting user tweets. Check if username was inserted correctly.</h2>
+        <h2 className="error-message">Error getting user tweets. Check if username was inserted correctly.</h2>
     }
     </div>
 );

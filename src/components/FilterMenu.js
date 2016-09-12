@@ -6,7 +6,8 @@ import FilterQueryMapper from '../containers/FilterQueryMapper';
 import './FilterMenu.css';
 
 
-import { filterList, operatorList } from '../utils/filters';
+import { filterList } from '../utils/filters';
+import { operatorList } from '../utils/operators';
 
 const FilterMenu = ({onFilterSelect, onOperatorSelect, onBlur}) => {
 	return (
