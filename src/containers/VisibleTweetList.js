@@ -62,7 +62,8 @@ const mapStateToProps = (state) => {
 
 	let newState = {
 		isFetching: state.tweetsByUser.isFetching,
-		tweets: filteredTweetState ? filteredTweetState.slice() : filteredTweetState
+		tweets: filteredTweetState ? filteredTweetState.slice() : filteredTweetState,
+		error: state.tweetsByUser.error
 	};
 
 	return newState;

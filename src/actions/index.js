@@ -7,7 +7,7 @@ export function setTweetOrder (order, isAscending) {
 		type: SET_TWEET_ORDER,
 		isAscending,
 		order
-	}
+	};
 }
 
 export const SET_FILTER = 'SET_FILTER';
@@ -17,7 +17,7 @@ export function setTweetFilter (filter, filterType) {
 		type: SET_FILTER,
 		filter,
 		filterType
-	}
+	};
 }
 
 export const SET_OPERATOR = 'SET_OPERATOR';
@@ -26,7 +26,7 @@ export function setTweetOperator (operator) {
 	return {
 		type: SET_OPERATOR,
 		operator
-	}
+	};
 }
 
 export const SET_FILTER_QUERY = 'SET_FILTER_QUERY';
@@ -35,7 +35,7 @@ export function triggerFilter (query) {
 	return {
 		type: SET_FILTER_QUERY,
 		query
-	}
+	};
 }
 
 export const REQUEST_TWEETS = 'REQUEST_TWEETS';
@@ -44,7 +44,7 @@ export function requestTweets(user) {
 	return {
 		type: REQUEST_TWEETS,
 		user
-	}
+	};
 }
 
 export const RECEIVE_TWEETS = 'RECEIVE_TWEETS';
@@ -54,7 +54,15 @@ export function receiveTweets(user, tweetArray) {
 		type: RECEIVE_TWEETS,
 		tweets: tweetArray,
 		user
-	}
+	};
+}
+
+export const CATCH_TWEET_ERROR = 'CATCH_TWEET_ERROR';
+
+export function catchError() {
+	return {
+		type: CATCH_TWEET_ERROR
+	};
 }
 
 export function fetchTweets(user) {
@@ -65,8 +73,11 @@ export function fetchTweets(user) {
 			.then(res => res.json())
 			.then(json => {
 				dispatch(receiveTweets(user, json));
+			})
+			.catch(err => {
+				dispatch(catchError())
 			});
-	}
+	};
 }
 
 

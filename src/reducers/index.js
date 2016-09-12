@@ -5,7 +5,8 @@ import {
 	RECEIVE_TWEETS,
 	SET_FILTER,
 	SET_OPERATOR,
-	SET_FILTER_QUERY
+	SET_FILTER_QUERY,
+	CATCH_TWEET_ERROR
 } from '../actions';
 import Immutable from 'immutable';
 
@@ -80,12 +81,19 @@ function tweets(state = { isFetching: false, tweets: [] }, action) {
 					.fromJS(state)
 					.set('isFetching', true)
 					.set('tweets', [])
+					.set('error', false)
 					.toJS();
 		case RECEIVE_TWEETS:
 			return Immutable
 					.fromJS(state)
 					.set('isFetching', false)
 					.set('tweets', action.tweets)
+					.set('error', false)
+					.toJS();
+		case CATCH_TWEET_ERROR:
+			return Immutable
+					.fromJS(state)
+					.set('error', true)
 					.toJS();
 		default:
 			return state;
@@ -96,6 +104,7 @@ function tweetsByUser(state = {}, action) {
 	switch (action.type) {
 		case RECEIVE_TWEETS:
 		case REQUEST_TWEETS:
+		case CATCH_TWEET_ERROR:
 			return tweets(state, action);
 		default:
 			return state;
