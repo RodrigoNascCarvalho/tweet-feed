@@ -7,7 +7,7 @@ This application has the following features:
   - Statistics button that shows sum of likes, average of likes per tweet and list with number of mentions per user.
 
 This is how the application looks like:
-[Overview](http://i.imgur.com/L4m8pdW.png)
+![Overview](http://i.imgur.com/L4m8pdW.png)
 
 To run it, just type:
 
